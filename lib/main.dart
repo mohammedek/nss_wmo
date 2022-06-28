@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
+import 'package:nss_wmo/pages/event_page.dart';
 import 'package:nss_wmo/widgets/buildCard.dart';
 
 void main() {
@@ -53,37 +54,40 @@ class _NssWmoState extends State<NssWmo> {
                     'Wmo Arts&Science College\n'
                     'NATIONAL SERVICE SCHEME',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  )), Expanded(
-                             child:
-                        Container(
-                              margin: EdgeInsets.all(8),
-                              height: 60,
-                              width: 340,
-                              child: Container(
-                                  child: Center(
-                                    child: Text(
-                                      "Events:",
-                                      style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                  decoration: BoxDecoration(
-                                      color: Color(0xFf363f93),
-                                      borderRadius: BorderRadius.circular(20),
-                                      boxShadow: [
-                                        new BoxShadow(
-                                            color: Color(0xFF363f93).withOpacity(0.3),
-                                            offset: new Offset(-9.0, 0.0),
-                                            blurRadius: 10.0,
-                                            spreadRadius: 4.0)
-                                      ])),
-
+                  )),
+              Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                            return EventPage();
+                          }));
+                        },
+                        child: Container(
+                            margin: EdgeInsets.all(8),
+                            height: 60,
+                            width: 340,
+                            child: Center(
+                              child: Text(
+                                "Events:",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            decoration: BoxDecoration(
+                                color: Color(0xFf363f93),
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  new BoxShadow(
+                                      color: Color(0xFF363f93).withOpacity(0.3),
+                                      offset: new Offset(-9.0, 0.0),
+                                      blurRadius: 10.0,
+                                      spreadRadius: 4.0)
+                                ])),
+                      ),
                     ),
-                           ),
-
                 ],
               ),
             ),
