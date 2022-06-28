@@ -10,6 +10,11 @@ class EventPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('this is an appbar'),
         ),
+        body: Container(
+          height: 50,
+          width: 50,
+          child:Text('navigation')
+        ),
       ),
     );
   }
