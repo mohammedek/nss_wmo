@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "819067784650",
+    "project_id": "nss-website-wmo",
+    "storage_bucket": "nss-website-wmo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819067784650:android:4ca9588520d3ede2531333",
+        "android_client_info": {
+          "package_name": "com.Wmo.nss_wmo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819067784650-igcq211tv50a7dbnrbnhdhbd89o3kkh4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcz4b_qNn5ivXjLdjdIjb8KsXbAzr3Xgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819067784650-igcq211tv50a7dbnrbnhdhbd89o3kkh4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

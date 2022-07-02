@@ -45,11 +45,9 @@ class HomeScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       )),
                   Expanded(
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                          return EventPage();
-                        }));
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => EventPage()));
                       },
                       child: Container(
                           margin: EdgeInsets.all(8),
@@ -57,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                           width: 340,
                           child: Center(
                             child: Text(
-                              "Events:",
+                              "Events",
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
