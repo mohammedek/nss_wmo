@@ -8,36 +8,50 @@ class EventPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-          appBar: AppBar(
-            leading:
-            ElevatedButton(
-                onPressed: () {
-                  print("pressed");
-                }, child: Icon(Icons.arrow_back_rounded)),
-            title: Text('NSS Daily Events'),
-          ),
-          body: GridView.builder(
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 9.0,
-              mainAxisSpacing: 9.0,
+            appBar: AppBar(
+              leading: ElevatedButton(
+                  onPressed: () {
+                    print("pressed");
+                  },
+                  child: Icon(Icons.arrow_back_rounded)),
+              title: Text('NSS Daily Events'),
             ),
-            itemCount: 20,
-            itemBuilder: (context, index) {
-              return ListView(
-              physics: AlwaysScrollableScrollPhysics(),
-              children: <Widget>[
-    Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSS-symbol.jpeg/480px-NSS-symbol.jpeg",
-    height: 150,
-    width: MediaQuery.of(context).size.width * 0.5,
-    fit: BoxFit.fill,
-    ),
-    ],
-    );
-            },
-          )
-        ));
+            body: ListView(
+                physics: AlwaysScrollableScrollPhysics(),
+                children: <Widget>[
+                  Card(
+                    elevation: 50,
+                    shadowColor: Colors.black,
+                    color: Colors.blueAccent[100],
+                    child: SizedBox(
+                        width: 300,
+                        height: 300,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Image(
+                            image: NetworkImage(
+                              "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSS-symbol.jpeg/480px-NSS-symbol.jpeg",
+                            ),
+                          ),
+                        )),
+                  ),
+                  Card(
+                    elevation: 50,
+                    shadowColor: Colors.black,
+                    color: Colors.blueAccent[100],
+                    child: SizedBox(
+                      width: 300,
+                      height: 300,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Image(
+                          image: NetworkImage(
+                            "https://static9.depositphotos.com/1431107/1154/i/450/depositphotos_11542091-stock-photo-sample-stamp.jpg",
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ])));
   }
 }
