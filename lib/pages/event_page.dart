@@ -11,9 +11,9 @@ class EventPage extends StatelessWidget {
             appBar: AppBar(
               leading: ElevatedButton(
                   onPressed: () {
-                    print("pressed");
+                    Navigator.pop(context);
                   },
-                  child: Icon(Icons.arrow_back_rounded)),
+                  child: Icon(Icons.arrow_back_ios_new_rounded)),
               title: Text('NSS Daily Events'),
             ),
             body: ListView(
@@ -53,5 +53,26 @@ class EventPage extends StatelessWidget {
                     ),
                   )
                 ])));
+  }
+}
+
+class EventPage1 extends StatelessWidget {
+  const EventPage1({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Second Route'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
   }
 }
