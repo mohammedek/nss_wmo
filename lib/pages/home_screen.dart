@@ -85,24 +85,43 @@ class HomeScreen extends StatelessWidget {
               )
             ),
             GridView(
+              shrinkWrap: true,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
               ),
               children: [
                 Card(
+                  semanticContainer: true,
+                  color: Colors.red,
+                  child:
+                      SizedBox(
+                        height: 5,
+                        width: 5,
+                        child:
+                  Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSS-symbol.jpeg/480px-NSS-symbol.jpeg',
+                    fit: BoxFit.fill,))),
+                Card(
                   color: Colors.green,
-                  child: Text("1", style: TextStyle(color: Colors.white,fontSize: 30),),
+                  shape:RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                  child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSS-symbol.jpeg/480px-NSS-symbol.jpeg'),
+
                 ),
                 Card(
                   color: Colors.green,
-                  child: Text("2", style: TextStyle(color: Colors.white,fontSize: 30),),
+                  shape:RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: Image.network('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSS-symbol.jpeg/480px-NSS-symbol.jpeg'),
+
+                ),
+                Divider(
+                  thickness: 2,
                 ),
                 Card(
                   color: Colors.green,
-                  child: Text("3", style: TextStyle(color: Colors.white,fontSize: 30),),
-                ),
-                Card(
-                  color: Colors.green,
+                  shape:RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
                   child: Text("4", style: TextStyle(color: Colors.white,fontSize: 30),),
                 ),
               ],
