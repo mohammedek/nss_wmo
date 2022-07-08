@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nss_wmo/widgets/photoItem.dart';
 import 'event_page.dart';
 
 class HomeScreen extends StatelessWidget {
