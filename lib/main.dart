@@ -3,9 +3,11 @@ import 'package:marquee/marquee.dart';
 import 'package:nss_wmo/pages/event_page.dart';
 import 'package:nss_wmo/pages/home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const NssWmo());
 }
 

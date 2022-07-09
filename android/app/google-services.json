@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "819067784650",
+    "firebase_url": "https://nss-website-wmo-default-rtdb.firebaseio.com",
     "project_id": "nss-website-wmo",
     "storage_bucket": "nss-website-wmo.appspot.com"
   },
