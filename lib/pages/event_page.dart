@@ -1,5 +1,8 @@
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:nss_wmo/pages/home_screen.dart';
+
+import '../widgets/FirebaseStoreDataBase.dart';
 
 class EventPage extends StatelessWidget {
   const EventPage({Key? key}) : super(key: key);
@@ -28,13 +31,10 @@ class EventPage extends StatelessWidget {
                         height: 300,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
-                          child: Image(
-                            image: NetworkImage(
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NSS-symbol.jpeg/480px-NSS-symbol.jpeg",
+                          child:Image.network('event_nss_hope.jpeg'
                             ),
                           ),
                         )),
-                  ),
                   Card(
                     elevation: 50,
                     shadowColor: Colors.black,
@@ -46,7 +46,7 @@ class EventPage extends StatelessWidget {
                         padding: const EdgeInsets.all(20.0),
                         child: Image(
                           image: NetworkImage(
-                            "https://static9.depositphotos.com/1431107/1154/i/450/depositphotos_11542091-stock-photo-sample-stamp.jpg",
+                            "—Pngtree—indian ten rupee coin vector_8133288.png",
                           ),
                         ),
                       ),
@@ -56,23 +56,30 @@ class EventPage extends StatelessWidget {
   }
 }
 
-class EventPage1 extends StatelessWidget {
-  const EventPage1({Key? key}) : super(key: key);
+class ImageLoader extends StatelessWidget {
+  const ImageLoader({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Second Route'),
+        title: const Text("ImageGetter"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
+      body: FutureBuilder(
+        future: FireStoreDataBase().getData(),
+        builder: (context,snapshot){
+    if (snapshot.hasError) {
+      return Text('Something went wrong',);
+    }
+    if (snapshot.connectionState == ConnectionState.done){
+      return Image.network(snapshot.data.toString(),
+      );
+    }
+    return Center(child: CircularProgressIndicator(),);
+        },
       ),
     );
   }
 }
+
+
