@@ -16,7 +16,7 @@ class EventPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(Icons.arrow_back_ios_new_rounded)),
+                  child: Icon(Icons.arrow_back)),
               title: Text('NSS Daily Events'),
             ),
             body: ListView(
@@ -31,7 +31,7 @@ class EventPage extends StatelessWidget {
                         height: 300,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
-                          child:Image.network('event_nss_hope.jpeg'
+                          child:Image.network('https://firebasestorage.googleapis.com/v0/b/nss-website-wmo.appspot.com/o/event_nss_hope.jpeg?alt=media&token=f4426f33-e5a2-4398-bae7-248c132a4e6b'
                             ),
                           ),
                         )),
@@ -46,7 +46,7 @@ class EventPage extends StatelessWidget {
                         padding: const EdgeInsets.all(20.0),
                         child: Image(
                           image: NetworkImage(
-                            "—Pngtree—indian ten rupee coin vector_8133288.png",
+                            "https://firebasestorage.googleapis.com/v0/b/nss-website-wmo.appspot.com/o/%E2%80%94Pngtree%E2%80%94indian%20ten%20rupee%20coin%20vector_8133288.png?alt=media&token=2ec8cdd7-f872-4ed4-b727-cc0d2eea1431",
                           ),
                         ),
                       ),
