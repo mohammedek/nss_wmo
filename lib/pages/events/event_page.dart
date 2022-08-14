@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:nss_wmo/pages/home_screen.dart';
+import 'package:nss_wmo/data/firebase_db.dart';
 
-import '../widgets/FirebaseStoreDataBase.dart';
 
 class EventPage extends StatefulWidget {
   const EventPage({Key? key}) : super(key: key);
@@ -15,46 +13,36 @@ class EventPage extends StatefulWidget {
 class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-        home: Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        leading: ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Icon(Icons.arrow_back)),
         title: Text('NSS Daily Events'),
       ),
       body: StreamBuilder<QuerySnapshot>(
-// Renders every post from the Firebase Firestore Database.
-          stream: FirebaseFirestore.instance.collection("events").snapshots(),
+          stream: FirebaseDB.events.snapshots(),
           builder: (context, snapshot) {
-            print(snapshot.error);
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                 child: CircularProgressIndicator(),
               );
             }
 
-            if (snapshot.hasData){
-            return ListView.builder(
-                itemCount: snapshot.data!.docs.length,
-                itemBuilder: (context, i) => Container(
-                  color: Colors.red,
-    padding: EdgeInsets.all(10),
-    child: Card(
-      child:
-      Image.network(snapshot.data!.docs[i]['img']),
-    ),
-                ));
+            if (snapshot.hasData) {
+              print(snapshot.data?.docs.length);
+              return ListView.builder(
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (context, i) => Container(
+                        color: Colors.red,
+                        padding: EdgeInsets.all(10),
+                        child: Card(
+                          child: Image.network(snapshot.data!.docs[i]['img']),
+                        ),
+                      ));
             }
             return Center(
               child: Text("error"),
             );
-          })
-          ,
-    ));
+          }),
+    );
   }
 }
 //
