@@ -4,18 +4,18 @@ import 'package:nss_wmo/pages/home/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  // await Firebase.initializeApp(
-  //   options: FirebaseOptions(
-  //       apiKey: "AIzaSyAJCzqskQcDIxxMbyQpRUfJWyDdDkbyU24",
-  //       authDomain: "nss-website-wmo.firebaseapp.com",
-  //       databaseURL: "https://nss-website-wmo-default-rtdb.firebaseio.com",
-  //       projectId: "nss-website-wmo",
-  //       storageBucket: "nss-website-wmo.appspot.com",
-  //       messagingSenderId: "819067784650",
-  //       appId: "1:819067784650:web:f3476c02dada057a531333",
-  //       measurementId: "G-5253W7LSJN")
-  // );
+  // await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: FirebaseOptions(
+        apiKey: "AIzaSyAJCzqskQcDIxxMbyQpRUfJWyDdDkbyU24",
+        authDomain: "nss-website-wmo.firebaseapp.com",
+        databaseURL: "https://nss-website-wmo-default-rtdb.firebaseio.com",
+        projectId: "nss-website-wmo",
+        storageBucket: "nss-website-wmo.appspot.com",
+        messagingSenderId: "819067784650",
+        appId: "1:819067784650:web:f3476c02dada057a531333",
+        measurementId: "G-5253W7LSJN")
+  );
   runApp(const NssWmo());
 }
 

@@ -29,12 +29,12 @@ class _EventPageState extends State<EventPage> {
             if (snapshot.hasData) {
               print(snapshot.data?.docs.length);
               return ListView.builder(
-                  itemCount: snapshot.data!.docs.length,
+                  itemCount: snapshot.data?.docs.length,
                   itemBuilder: (context, i) => Container(
-                        color: Colors.red,
+                        color: Colors.white54,
                         padding: EdgeInsets.all(10),
                         child: Card(
-                          child: Image.network(snapshot.data!.docs[i]['img']),
+                          child: Image.network(snapshot.data!.docs[i]['img'],height:MediaQuery.of(context).size.height,width:MediaQuery.of(context).size.width),
                         ),
                       ));
             }
