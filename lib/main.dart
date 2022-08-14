@@ -1,24 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:marquee/marquee.dart';
-import 'package:nss_wmo/pages/event_page.dart';
-import 'package:nss_wmo/pages/home_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:nss_wmo/pages/home/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: FirebaseOptions(
-        apiKey: "AIzaSyAJCzqskQcDIxxMbyQpRUfJWyDdDkbyU24",
-        authDomain: "nss-website-wmo.firebaseapp.com",
-        databaseURL: "https://nss-website-wmo-default-rtdb.firebaseio.com",
-        projectId: "nss-website-wmo",
-        storageBucket: "nss-website-wmo.appspot.com",
-        messagingSenderId: "819067784650",
-        appId: "1:819067784650:web:f3476c02dada057a531333",
-        measurementId: "G-5253W7LSJN")
-  );
+  await Firebase.initializeApp();
+  // await Firebase.initializeApp(
+  //   options: FirebaseOptions(
+  //       apiKey: "AIzaSyAJCzqskQcDIxxMbyQpRUfJWyDdDkbyU24",
+  //       authDomain: "nss-website-wmo.firebaseapp.com",
+  //       databaseURL: "https://nss-website-wmo-default-rtdb.firebaseio.com",
+  //       projectId: "nss-website-wmo",
+  //       storageBucket: "nss-website-wmo.appspot.com",
+  //       messagingSenderId: "819067784650",
+  //       appId: "1:819067784650:web:f3476c02dada057a531333",
+  //       measurementId: "G-5253W7LSJN")
+  // );
   runApp(const NssWmo());
 }
 
