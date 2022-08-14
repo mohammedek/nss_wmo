@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nss_wmo/data/firebase_db.dart';
 
-
 class EventPage extends StatefulWidget {
   const EventPage({Key? key}) : super(key: key);
 
@@ -27,16 +26,21 @@ class _EventPageState extends State<EventPage> {
             }
 
             if (snapshot.hasData) {
-              print(snapshot.data?.docs.length);
+              print(snapshot.data!.docs.length);
               return ListView.builder(
-                  itemCount: snapshot.data?.docs.length,
+                  itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, i) => Container(
-                        color: Colors.white54,
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          child: Image.network(snapshot.data!.docs[i]['img'],height:MediaQuery.of(context).size.height,width:MediaQuery.of(context).size.width),
-                        ),
-                      ));
+                          color: Colors.white54,
+                          padding: EdgeInsets.all(10),
+                          child:(
+                            Card(
+                              child: Image.network(
+                                  snapshot.data!.docs[i]['img'],
+                                  fit: BoxFit.contain,
+                                  height: MediaQuery.of(context).size.height,
+                                  width: MediaQuery.of(context).size.width),
+                            )),
+                          ));
             }
             return Center(
               child: Text("error"),
