@@ -53,3 +53,9 @@ flutter:
   assets:
     - assets/logo/nss_logo.png
     - assets/logo/wmo_logo.png
+    - assets/images/nss_main1.jpeg
+    - assets/images/nss_main2.jpeg
+    - assets/images/nss_main3.jpeg
+    - assets/images/nss_main4.jpeg
+    - assets/images/nss_main5.jpeg
+    - assets/images/nss_main6.jpeg

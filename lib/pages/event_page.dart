@@ -16,6 +16,7 @@ class _EventPageState extends State<EventPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: Scaffold(
       appBar: AppBar(
         leading: ElevatedButton(
@@ -29,6 +30,7 @@ class _EventPageState extends State<EventPage> {
 // Renders every post from the Firebase Firestore Database.
           stream: FirebaseFirestore.instance.collection("events").snapshots(),
           builder: (context, snapshot) {
+            print(snapshot.error);
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
                 child: CircularProgressIndicator(),

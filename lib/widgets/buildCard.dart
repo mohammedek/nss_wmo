@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
 
-  Widget buildCard() =>
-      Container(
-        width: 200,
-        height: 200,
-        color: Colors.red,
-        child: Column(
-          children: [
-            Image.network('https://images.pexels.com/photos/1556691/pexels-photo-1556691.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500')
-          ],
-        ),
+class buildCards extends StatefulWidget {
+  final String imageId;
+  const buildCards({required this.imageId});
 
-    );
+  @override
+  State<buildCards> createState() => _buildCardsState();
+}
+
+class _buildCardsState extends State<buildCards> {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        semanticContainer: true,
+        color: Colors.red,
+        child:
+        SizedBox(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child:Image.asset('assets/images/nss_main1.jpeg',fit: BoxFit.cover
+            )));
+  }
+}
+
 
 
