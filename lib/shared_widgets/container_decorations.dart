@@ -10,7 +10,7 @@ class ContainerDecor {
         BoxShadow(
             color: Color(0x30363f93),
             offset: Offset(-9.0, 0.0),
-            blurRadius: 10.0,
-            spreadRadius: 4.0)
+            blurRadius: 5.0,
+            spreadRadius: 2.0)
       ]);
 }

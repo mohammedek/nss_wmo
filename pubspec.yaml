@@ -40,6 +40,7 @@ dependencies:
   google_fonts: ^3.0.1
   cloud_firestore: ^3.1.18
   firebase_core: ^1.19.1
+  url_launcher: ^6.1.5
 
 dev_dependencies:
   flutter_test:
@@ -59,3 +60,5 @@ flutter:
     - assets/images/nss_main4.jpeg
     - assets/images/nss_main5.jpeg
     - assets/images/nss_main6.jpeg
+    - assets/images/nss_main7.jpeg
+    - assets/images/nss_main_9.jpeg

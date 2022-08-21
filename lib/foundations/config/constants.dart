@@ -20,4 +20,5 @@ class ImageConst {
   static const nss_main4 = "assets/images/nss_main4.jpeg";
   static const nss_main5 = "assets/images/nss_main5.jpeg";
   static const nss_main6 = "assets/images/nss_main6.jpeg";
+  static const nss_main9 = "assets/images/nss_main_9.jpeg";
 }

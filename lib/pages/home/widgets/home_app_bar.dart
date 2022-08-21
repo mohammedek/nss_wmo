@@ -21,7 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         title: Padding(
           padding: const EdgeInsets.all(9.0),
           child: const Text('NSS - WMOC'),
-        ));
+    ),);
   }
 
   @override
