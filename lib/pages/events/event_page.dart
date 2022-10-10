@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:nss_wmo/data/firebase_db.dart';
+import 'package:line_icons/line_icon.dart';
 import 'dart:html' as html;
 
 class EventPage extends StatefulWidget {
@@ -15,6 +16,7 @@ class _EventPageState extends State<EventPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.indigo,
         title: Text('NSS Daily Events'),
       ),
       body: StreamBuilder<QuerySnapshot>(
@@ -29,36 +31,58 @@ class _EventPageState extends State<EventPage> {
             if (snapshot.hasData) {
               print(snapshot.data!.docs.length);
               return ListView.builder(
-                itemCount: snapshot.data!.docs.length,
-                itemBuilder: (context, i) => Card(
-                    margin: EdgeInsets.only(top: 10),
-                    color: Colors.white54,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5)),
-                    child: ListTile(
-                      onTap: (){
-                         AlertDialog alert = AlertDialog(
-                          title: Text(snapshot.data!.docs[i]['desc']),
-                        );
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return alert;
+                  itemCount: snapshot.data!.docs.length,
+                  itemBuilder: (context, i) => Container(
+                        margin: EdgeInsets.only(top: 10),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                            color: Colors.white54,
+                            borderRadius: BorderRadius.circular(5)),
+                        child: ListTile(
+                          // contentPadding: EdgeInsetsGeometry.infinity,
+                          enabled: true,
+                          style: ListTileTheme.of(context).style,
+                          // title: Text(snapshot.data?.docs[i]['text']),
+                          onTap: () {
+                            AlertDialog alert = AlertDialog(
+                              shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+                              backgroundColor: Colors.white,
+                              title: Text(snapshot.data!.docs[i]['desc']),
+                              titleTextStyle: TextStyle(fontWeight:FontWeight.w300),
+                              actions: <Widget>[
+                                Column(
+                                  children: [
+                                    // Text(snapshot.data!.docs[i]['desc']),
+                                    Center(
+                                        child: Image.network(
+                                      snapshot.data!.docs[i]['img'],
+                                      height: 300,
+                                      width: 300,
+                                    ))
+                                  ],
+                                )
+                              ],
+
+                            );
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return alert;
+                              },
+                            );
                           },
-                        );
-                        },
-                      subtitle: Text(
-                        snapshot.data!.docs[i]['text'],
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
-                        textAlign: TextAlign.start,
-                      ),
-                      leading: CircleAvatar(
-                        backgroundImage:
-                            NetworkImage(snapshot.data!.docs[i]['img']),
-                      ),
-                    )),
-              );
+                          title: Text(
+                            snapshot.data!.docs[i]['text'],
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15),
+                            textAlign: TextAlign.start,
+                          ),
+                          leading: CircleAvatar(
+                            backgroundImage:
+                                NetworkImage(snapshot.data!.docs[i]['img']),
+                          ),
+                        ),
+                      ));
             }
             return Center(
               child: Text("error"),

@@ -33,7 +33,8 @@ class header extends StatelessWidget {
             InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => EventPage()));
+                      MaterialPageRoute(
+                          builder: (context) => EventPage()));
                 },
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
